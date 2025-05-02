@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shorts Detoxifier</title>
+  <link rel="stylesheet" href="tailwind.min.css">
+</head>
+<body class="bg-gray-100 p-4 w-80">
+  <h1 class="text-xl font-bold text-gray-800 mb-4">Shorts Detoxifier</h1>
+  <div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700">Keywords/Hashtags</label>
+    <input id="keywords" class="w-full p-2 border rounded-md" placeholder="e.g., #coding, productivity, -clickbait" />
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700">Approved Creators</label>
+    <input id="creators" class="w-full p-2 border rounded-md" placeholder="e.g., freeCodeCamp, YogaWithAdriene" />
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700">View Limit (per session)</label>
+    <input id="viewLimit" type="number" min="1" value="5" class="w-full p-2 border rounded-md" />
+  </div>
+  <div class="mb-4">
+    <label class="flex items-center">
+      <input id="strictMode" type="checkbox" class="mr-2" />
+      <span class="text-sm text-gray-700">Strict Mode (Exact Matches)</span>
+    </label>
+  </div>
+  <button id="save" class="w-full bg-emerald-600 text-white p-2 rounded-md hover:bg-emerald-700">Save Settings</button>
+  <h2 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Suggest Keywords</h2>
+  <input id="interest" class="w-full p-2 border rounded-md mb-2" placeholder="Your interest (e.g., fitness)" />
+  <button id="suggest" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">Get Suggestions</button>
+  <ul id="suggestions" class="mt-2"></ul>
+  <h2 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Analytics</h2>
+  <canvas id="analyticsChart" class="w-full"></canvas>
+  <script type="module" src="chart.min.js"></script>
+  <script src="popup.js"></script>
+  <script src="xlsx-handler.js"></script>
+</body>
+</html>

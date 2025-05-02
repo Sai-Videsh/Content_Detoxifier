@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Shorts Detoxifier",
+  "version": "1.0",
+  "description": "Filter YouTube Shorts and Instagram Reels by keywords/hashtags, with suggestions and analytics.",
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+  {
+    "resources": [
+      "data/suggestions.json",
+      "icons/icon16.png",
+      "icons/icon48.png",
+      "icons/icon128.png"
+    ],
+    "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"]
+  }
+]
+
+}
